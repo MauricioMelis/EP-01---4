@@ -1,0 +1,38 @@
+﻿<Window x:Class="EP_01___4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Formulari Dinàmic" Height="300" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <ComboBox x:Name="SelectionComboBox" SelectionChanged="SelectionComboBox_SelectionChanged">
+                <ComboBoxItem Content="Persona Física" />
+                <ComboBoxItem Content="Empresa" />
+            </ComboBox>
+
+            <StackPanel x:Name="PersonaFisicaPanel" Visibility="Collapsed">
+                <TextBlock Text="Nom:" />
+                <TextBox x:Name="NomTextBox" TextChanged="InputField_TextChanged" />
+                <TextBlock Name="VacioNombre" Foreground="Red" Text="El campo del nombre está vacío" Visibility="Visible"/>
+                
+                <TextBlock Text="DNI:" />
+                <TextBox x:Name="DNITextBox" TextChanged="InputField_TextChanged" />
+                <TextBlock Name="VacioDNI" Foreground="Red" Text="El campo del DNI está vacío" Visibility="Visible"/>
+
+            </StackPanel>
+
+            <StackPanel x:Name="EmpresaPanel" Visibility="Collapsed">
+                <TextBlock Text="Nombre de la Empresa:" />
+                <TextBox x:Name="NomEmpresaTextBox" TextChanged="InputField_TextChanged" />
+                <TextBlock Name="VacioEmpresa" Foreground="Red" Text="El campo del nombre de la empresa está vacío" Visibility="Visible"/>
+
+
+                <TextBlock Text="CIF:" />
+                <TextBox x:Name="CIFTextBox" TextChanged="InputField_TextChanged" />
+                <TextBlock Name="VacioCIF" Foreground="Red" Text="El campo del CIF está vacío" Visibility="Visible"/>
+
+            </StackPanel>
+
+            <Button x:Name="SubmitButton" Content="Enviar" IsEnabled="False" Click="SubmitButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
